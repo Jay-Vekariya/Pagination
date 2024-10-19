@@ -86,7 +86,7 @@ const Pagination = () => {
 
   return (
     <>
-      <div className="flex flex-row gap-2 place-content-center">
+      <div className="flex flex-row gap-2 2xl:flex 2xl:flex-row 2xl:gap-6 xl:flex xl:flex-row xl:gap-6 md:flex md:flex-row md:gap-6 sm:flex sm:flex-row sm:gap-3  place-content-center">
         {pageNumbers()}
       </div>
     </>

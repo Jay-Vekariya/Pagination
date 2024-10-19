@@ -19,27 +19,30 @@ const TableData = () => {
           <div>
             <table className="w-auto border">
               <thead>
-                <tr className="border-b 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-3xl sm:text-3xl text-[10px]">
-                  <th className="border-r p-2 2xl:w-[100px] xl:w-[100px] lg:w-[100px] ">
+                <tr className="border-b 2xl:text-3xl xl:text-2xl lg:text-3xl md:text-3xl sm:text-3xl text-[10px]">
+                  <th className="border-r p-2 2xl:w-[100px] xl:w-[100px] lg:w-[100px] md:w-[100px] sm:w-[100px] w-[50px] ">
                     ID
                   </th>
-                  <th className="border-r 2xl:w-[300px] xl:w-[300px] lg:w-[300px]">
+                  <th className="border-r 2xl:w-[300px] xl:w-[300px] lg:w-[300px] md:w-[300px] sm:w-[200px] w-[50px] ">
                     Name
                   </th>
-                  <th className="border-r 2xl:w-[400px] xl:w-[400px] lg:w-[400px]">
+                  <th className="border-r 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[300px] w-[50px] ">
                     Email
                   </th>
-                  <th className="border-r 2xl:w-[200px] xl:w-[200px] lg:w-[200px]">
+                  <th className="border-r 2xl:w-[200px] xl:w-[200px] lg:w-[200px] md:w-[200px] sm:w-[200px] w-[50px] ">
                     Age
                   </th>
-                  <th className="2xl:w-[250px] xl:w-[250px] lg:w-[250px]">
+                  <th className="2xl:w-[250px] xl:w-[250px] lg:w-[250px] md:w-[250px] sm:w-[250px] w-[50px] ">
                     Country
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {currentData.map((datas, index) => (
-                  <tr key={index} className=" text-[10px] min-h-[30px]">
+                  <tr
+                    key={index}
+                    className=" text-[10px] 2xl:text-[30px] xl:text-[25px] lg:text-[25px] md:text-[25px] sm:text-[25px]  min-h-[30px]"
+                  >
                     <td className="border p-2 text-center">{datas.id}</td>
                     <td className="border p-2 text-center">{datas.name}</td>
                     <td className="border p-2 text-center">{datas.email}</td>
