@@ -1,41 +1,93 @@
 import React from "react";
-import { useHome } from "./Home";
+import { useHome } from "./GlobalState";
 
 const Pagination = () => {
-  const { data } = useHome();
+  const { dispatch, currentPage, dataperpagePage, totalpage } = useHome();
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      dispatch({ type: "CURRENT_PAGE", payload: currentPage - 1 });
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalpage) {
+      dispatch({ type: "CURRENT_PAGE", payload: currentPage + 1 });
+    }
+  };
+
+  const pageNumbers = () => {
+    const pages = [];
+
+    pages.push(
+      <button
+        className="p-2 bg-blue-700 text-white rounded-md"
+        onClick={handlePrev}
+        disabled={currentPage === 1}
+      >
+        Previous
+      </button>
+    );
+
+    if (currentPage > 2) {
+      pages.push(
+        <button onClick={() => dispatch({ type: "CURRENT_PAGE", payload: 1 })}>
+          1
+        </button>
+      );
+      if (currentPage > 3) {
+        pages.push(<span>...</span>);
+      }
+    }
+
+    for (
+      let i = Math.max(1, currentPage - 1);
+      i <= Math.min(totalpage, currentPage + 1);
+      i++
+    ) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => dispatch({ type: "CURRENT_PAGE", payload: i })}
+          className={
+            currentPage === i ? " bg-blue-700 text-white p-3 rounded-md" : ""
+          }
+        >
+          {i}
+        </button>
+      );
+    }
+
+    if (currentPage < totalpage - 1) {
+      if (currentPage < totalpage - 2) {
+        pages.push(<span>...</span>);
+      }
+      pages.push(
+        <button
+          onClick={() => dispatch({ type: "CURRENT_PAGE", payload: totalpage })}
+        >
+          {totalpage}
+        </button>
+      );
+    }
+
+    pages.push(
+      <button
+        className="p-2 bg-blue-700 text-white rounded-md"
+        onClick={handleNext}
+        disabled={currentPage === totalpage}
+      >
+        Next
+      </button>
+    );
+
+    return pages;
+  };
 
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen bg-slate-900 text-white">
-        <div className="w-full max-w-4xl">
-          <h1 className="text-center uppercase p-8">
-            <span className="text-4xl">Pagination</span>
-          </h1>
-          <div>
-            <table className="w-full border">
-              <thead>
-                <tr>
-                  <th className="border-r w-[50px] p-2">ID</th>
-                  <th className="border-r w-[200px]">Name</th>
-                  <th className="border-r w-[300px]">Email</th>
-                  <th className="border-r w-[100px]">Age</th>
-                  <th className="w-[150px]">Country</th>
-                </tr>
-              </thead>
-              <tbody >
-                {data.map((datas, index) => (
-                  <tr key={index}>
-                    <td className="border p-2 text-center">{datas.id}</td>
-                    <td className="border p-2 text-center">{datas.name}</td>
-                    <td className="border p-2 text-center">{datas.email}</td>
-                    <td className="border p-2 text-center">{datas.age}</td>
-                    <td className="border p-2 text-center">{datas.country}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div className="flex flex-row gap-8 place-content-center">
+        {pageNumbers()}
       </div>
     </>
   );
