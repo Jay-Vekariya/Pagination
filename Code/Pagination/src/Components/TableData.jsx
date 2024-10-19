@@ -19,12 +19,22 @@ const TableData = () => {
           <div>
             <table className="w-auto border">
               <thead>
-                <tr className="border-b 2xl:text-xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl">
-                  <th className="border-r w-[100px] p-2">ID</th>
-                  <th className="border-r w-[300px]">Name</th>
-                  <th className="border-r w-[400px]">Email</th>
-                  <th className="border-r w-[200px]">Age</th>
-                  <th className="w-[250px]">Country</th>
+                <tr className="border-b 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-3xl sm:text-3xl text-3xl">
+                  <th className="border-r p-2 2xl:w-[100px] xl:w-[100px] lg:w-[100px] ">
+                    ID
+                  </th>
+                  <th className="border-r 2xl:w-[300px] xl:w-[300px] lg:w-[300px]">
+                    Name
+                  </th>
+                  <th className="border-r 2xl:w-[400px] xl:w-[400px] lg:w-[400px]">
+                    Email
+                  </th>
+                  <th className="border-r 2xl:w-[200px] xl:w-[200px] lg:w-[200px]">
+                    Age
+                  </th>
+                  <th className="2xl:w-[250px] xl:w-[250px] lg:w-[250px]">
+                    Country
+                  </th>
                 </tr>
               </thead>
               <tbody>
