@@ -2,7 +2,7 @@ import React from "react";
 import { useHome } from "./GlobalState";
 
 const Pagination = () => {
-  const { dispatch, currentPage, dataperpagePage, totalpage } = useHome();
+  const { dispatch, currentPage,totalpage } = useHome();
 
   const handlePrev = () => {
     if (currentPage > 1) {

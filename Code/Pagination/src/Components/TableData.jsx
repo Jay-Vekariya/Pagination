@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useHome } from "./GlobalState";
 import Pagination from "./Pagination";
 const TableData = () => {
-  const { data, lastPageOfPage, firstindexOfPage, loading, dispatch } =
+  const { data, lastPageOfPage, firstindexOfPage } =
     useHome();
 
   const currentData = data.slice(firstindexOfPage, lastPageOfPage);
