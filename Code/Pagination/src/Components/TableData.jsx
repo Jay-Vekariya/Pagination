@@ -15,7 +15,7 @@ const TableData = () => {
             Pagination
           </span>
         </h1>
-        <div className="2xl:flex 2xl:flex-col 2xl:gap-12 xl:flex xl:flex-col xl:gap-12">
+        <div className="2xl:flex 2xl:flex-col 2xl:gap-12 xl:flex xl:flex-col xl:gap-12 lg:flex lg:flex-col lg:gap-12 md:flex md:flex-col md:gap-12 sm:flex sm:flex-col sm:gap-12 flex flex-col gap-12">
           <div>
             <table className="w-auto border">
               <thead>
@@ -39,7 +39,7 @@ const TableData = () => {
               </thead>
               <tbody>
                 {currentData.map((datas, index) => (
-                  <tr key={index} className=" text-[10px]">
+                  <tr key={index} className=" text-[10px] min-h-[30px]">
                     <td className="border p-2 text-center">{datas.id}</td>
                     <td className="border p-2 text-center">{datas.name}</td>
                     <td className="border p-2 text-center">{datas.email}</td>

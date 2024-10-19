@@ -21,7 +21,7 @@ const Pagination = () => {
 
     pages.push(
       <button
-        className="p-2 bg-blue-700 text-white rounded-md"
+        className="p-1 bg-blue-700 text-white rounded-md"
         onClick={handlePrev}
         disabled={currentPage === 1}
       >
@@ -50,7 +50,7 @@ const Pagination = () => {
           key={i}
           onClick={() => dispatch({ type: "CURRENT_PAGE", payload: i })}
           className={
-            currentPage === i ? " bg-blue-700 text-white p-3 rounded-md" : ""
+            currentPage === i ? " bg-blue-700 text-white p-1.5 rounded-md" : ""
           }
         >
           {i}
@@ -73,7 +73,7 @@ const Pagination = () => {
 
     pages.push(
       <button
-        className="p-2 bg-blue-700 text-white rounded-md"
+        className="p-1 bg-blue-700 text-white rounded-md"
         onClick={handleNext}
         disabled={currentPage === totalpage}
       >
