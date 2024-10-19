@@ -4,12 +4,24 @@ const HomeContext = createContext();
 
 const initialState = {
   data: [],
+  currentPage: 1,
+  dataperpagePage: 6,
+  lastPageOfPage: "",
+  firstindexOfPage: "",
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_DATA":
       return { ...state, data: action.payload };
+    case "CURRENT_PAGE":
+      return { ...state, currentPage: action.payload };
+    case "DATA_PER_PAGE":
+      return { ...state, dataperpagePage: action.payload };
+    case "LAST_INDEX_OFPAGE":
+      return { ...state, lastindexOfPage: currentPage * dataperpagePage };
+    case "FIRST_INDEX_OFPAGE":
+      return { ...state, firstindexOfPage: lastindexOfPage - dataperpagePage };
     default:
       return state;
   }
