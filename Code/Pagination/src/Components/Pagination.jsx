@@ -86,7 +86,7 @@ const Pagination = () => {
 
   return (
     <>
-      <div className="flex flex-row gap-8 place-content-center">
+      <div className="flex flex-row gap-2 place-content-center">
         {pageNumbers()}
       </div>
     </>

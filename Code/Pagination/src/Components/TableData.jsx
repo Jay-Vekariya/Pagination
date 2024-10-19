@@ -8,9 +8,9 @@ const TableData = () => {
   const currentData = data.slice(firstindexOfPage, lastPageOfPage);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-slate-900 text-white">
-      <div className="w-auto max-w-4xl">
-        <h1 className="text-center uppercase p-8">
+    <div className="p-4 flex justify-center items-center h-screen bg-slate-900 text-white">
+      <div className="w-auto">
+        <h1 className="text-center uppercase pb-4">
           <span className="2xl:text-5xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl">
             Pagination
           </span>
@@ -19,7 +19,7 @@ const TableData = () => {
           <div>
             <table className="w-auto border">
               <thead>
-                <tr className="border-b 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-3xl sm:text-3xl text-3xl">
+                <tr className="border-b 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-3xl sm:text-3xl text-[10px]">
                   <th className="border-r p-2 2xl:w-[100px] xl:w-[100px] lg:w-[100px] ">
                     ID
                   </th>
@@ -39,7 +39,7 @@ const TableData = () => {
               </thead>
               <tbody>
                 {currentData.map((datas, index) => (
-                  <tr key={index}>
+                  <tr key={index} className=" text-[10px]">
                     <td className="border p-2 text-center">{datas.id}</td>
                     <td className="border p-2 text-center">{datas.name}</td>
                     <td className="border p-2 text-center">{datas.email}</td>
